@@ -1,5 +1,7 @@
 @import url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot");
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
 /*! tailwindcss v2.1.2 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -11241,6 +11243,10 @@ video {
 
 .font-landing{
   font-family: CoreCircus;
+}
+
+.font-default{
+  font-family: Roboto;
 }
 
 .font-thin{
@@ -31853,6 +31859,12 @@ video {
   src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot?#iefix") format("embedded-opentype"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff2") format("woff2"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff") format("woff"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Roboto";
+
+  src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+}
+
 .btn {
   --tw-bg-opacity: 1;
   background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
@@ -31940,6 +31952,11 @@ video {
 .btn-hollow:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.nav-links:hover{
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
@@ -42633,6 +42650,10 @@ video {
 
   .sm\:font-landing{
     font-family: CoreCircus;
+  }
+
+  .sm\:font-default{
+    font-family: Roboto;
   }
 
   .sm\:font-thin{
@@ -73750,6 +73771,10 @@ video {
     font-family: CoreCircus;
   }
 
+  .md\:font-default{
+    font-family: Roboto;
+  }
+
   .md\:font-thin{
     font-weight: 100;
   }
@@ -104863,6 +104888,10 @@ video {
 
   .lg\:font-landing{
     font-family: CoreCircus;
+  }
+
+  .lg\:font-default{
+    font-family: Roboto;
   }
 
   .lg\:font-thin{
@@ -135980,6 +136009,10 @@ video {
     font-family: CoreCircus;
   }
 
+  .xl\:font-default{
+    font-family: Roboto;
+  }
+
   .xl\:font-thin{
     font-weight: 100;
   }
@@ -167093,6 +167126,10 @@ video {
 
   .\32xl\:font-landing{
     font-family: CoreCircus;
+  }
+
+  .\32xl\:font-default{
+    font-family: Roboto;
   }
 
   .\32xl\:font-thin{

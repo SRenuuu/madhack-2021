@@ -1,4 +1,5 @@
 @import url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +13,11 @@
 	font-family: "CoreCircus";
 	src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot");
 	src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot?#iefix") format("embedded-opentype"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff2") format("woff2"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff") format("woff"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 }
 
 .btn {
@@ -28,4 +34,8 @@
 
 .btn-hollow:hover {
 	@apply bg-blue-500 text-white;
+}
+
+.nav-links {
+	@apply hover:text-white;
 }

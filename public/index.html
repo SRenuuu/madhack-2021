@@ -1,47 +1,228 @@
+<!DOCTYPE html>
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <title>MadHack</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="index-styles.css">
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="index-styles.css" />
+        <style>
+            .gradient {
+                background: black;
+            }
+        </style>
     </head>
 
-    <body class="bg-black ">
-        <section>
-            <div class="bg-black py-4 border-t-8 border-blue-500 font-landing">
-                <div class="container flex justify-between items-center mx-auto">
-                    <a href="#" class="font-bold text-gray-500 text-2xl tracking-widest">LOGO</a>
-                    <div>
-                        <ul class="flex items-center text-gray-500">
-                            <li class="p-2 mx-4">
-                                <a href="#">About</a>
-                            </li>
-                            <li class="p-2 mx-4">
-                                <a href="#">Timeline</a>
-                            </li>
-                            <li class="p-2 mx-4">
-                                <a href="#">Sponsors</a>
-                            </li>
-                            <li class="p-2 mx-4">
-                                <a href="#">Contact</a>
-                            </li>
-                            <button class="btn">Register</button>
-                        </ul>
+    <body class="leading-normal tracking-normal text-white gradient font-default">
+        <!--Nav-->
+        <nav id="header" class="fixed w-full z-30 top-0 text-white">
+            <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+                <div class="pl-4 flex items-center">
+                    <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+                        href="#"> LOGO </a>
+                </div>
+                <div class="block lg:hidden pr-4">
+                    <button id="nav-toggle"
+                        class="flex items-center p-1 text-white hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                        <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <title>Menu</title>
+                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent p-4 lg:p-0 z-20 text-gray-300 text-base uppercase font-bold tracking-widest"
+                    id="nav-content">
+                    <ul class="list-reset text-gray-300 lg:flex justify-end flex-1 items-center">
+                        <li class="mr-3">
+                            <a class="inline-block no-underline hover:text-white hover:text-underline py-2 px-4"
+                                href="#">Timeline</a>
+                        </li>
+                        <li class="mr-3">
+                            <a class="inline-block no-underline hover:text-white hover:text-underline py-2 px-4"
+                                href="#">Prizes</a>
+                        </li>
+                    </ul>
+                    <button id="navAction"
+                        class="uppercase mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 transform transition hover:scale-105 duration-300 ease-in-out">Register</button>
+                </div>
+            </div>
+        </nav>
+        <!--Hero-->
+        <div class="py-24">
+            <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+                <div class="flex flex-col w-full justify-center text-center">
+                    <div class="py-40">
+                        <h1 class="font-landing landing-text" data-heading="mad">Madhack</h1>
+                        <p
+                            class="text-white text-center font-bold sm:text-xs md:text-xl lg:text-xl uppercase tracking-wider">
+                            Battle
+                            out your
+                            mobile
+                            application
+                            development
+                            skills in the ultimate hackathon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative -mt-12 lg:-mt-24">
+            <img src="./assets/top-wave.svg" />
+        </div>
+        <section class="bg-gray-100 py-8">
+            <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Prizes</h1>
+                <div class="w-full mb-4">
+                    <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
+                    <div
+                        class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+                        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+                            <div class="p-8 text-3xl font-bold text-center border-b-4">Third Place</div>
+                            <ul class="w-full">
+                                <img src="assets/bronze.jpg" />
+                            </ul>
+                            <div
+                                class="flex-none bg-white rounded-b rounded-t-none overflow-hidden px-6 py-10 font-bold text-center text-lg">
+                                A cash prize of
+                                <div class="w-full text-5xl font-bold text-center">
+                                    Rs. 50,000
+                                </div> + swag + certificates + stickers
+                            </div>
+                        </div>
+
+                    </div>
+                    <div
+                        class="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
+                        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                            <div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
+                            <div class="p-8 text-3xl font-bold text-center border-b-4">First Place</div>
+                            <ul class="w-full">
+                                <img src="assets/8601.jpg" />
+                            </ul>
+                            <div
+                                class="flex-none bg-white rounded-b rounded-t-none overflow-hidden px-6 pb-10 font-bold text-center text-lg">
+                                A cash prize of
+                                <div class="w-full text-6xl font-bold text-center">
+                                    Rs. 50,000
+                                </div> + swag + certificates + stickers
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+                        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+                            <div class="p-8 text-3xl font-bold text-center border-b-4">Second Place</div>
+                            <ul class="w-full">
+                                <img src="assets/silver.jpg" />
+                                <div
+                                    class="flex-none bg-white rounded-b rounded-t-none overflow-hidden px-6 pb-10 font-bold text-center text-lg">
+                                    A cash prize of
+                                    <div class="w-full text-5xl font-bold text-center">
+                                        Rs. 50,000
+                                    </div> + swag + certificates + stickers
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <main>
-            <div class="py-56">
-                <h1 class="font-landing landing-text" data-heading="m">Madhack</h1>
-                <p class="font-landing text-white text-center">Battle out your mobile application development skills in
-                    the ultimate
-                    hackathon</p>
+        <img src="./assets/bottom-wave.svg" />
+        <section class="container mx-auto text-center py-6 mb-12">
+            <h1 class="w-full my-2 text-4xl font-bold leading-tight text-center text-white">Register Now</h1>
+            <div class="w-full mb-4">
+                <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
-        </main>
+            <h3 class="my-4 text-lg leading-tight">Lorem ipsum blah blah blah</h3>
+            <button
+                class="uppercase mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">Register!</button>
+        </section>
+        <script>
+            var scrollpos = window.scrollY;
+            var header = document.getElementById("header");
+            var navcontent = document.getElementById("nav-content");
+            var navaction = document.getElementById("navAction");
+            var brandname = document.getElementById("brandname");
+            var toToggle = document.querySelectorAll(".toggleColour");
 
+            document.addEventListener("scroll", function () {
+                /*Apply classes for slide in bar*/
+                scrollpos = window.scrollY;
+                if (scrollpos > 10) {
+                    header.classList.add("bg-white");
+                    navaction.classList.remove("bg-white");
+                    navaction.classList.add("gradient");
+                    navaction.classList.remove("text-gray-800");
+                    navaction.classList.add("text-white");
+                    //Use to switch toggleColour colours
+                    for (var i = 0; i < toToggle.length; i++) {
+                        toToggle[i].classList.add("text-gray-800");
+                        toToggle[i].classList.remove("text-gray-300");
+                    }
+                    header.classList.add("shadow");
+                    for (var i = 0; i < navcontent.children.length; i++) {
+                        navcontent.children[i].classList.remove("text-gray-300");
+                        navcontent.children[i].classList.add("text-black");
+                    }
+                    navcontent.classList.remove("bg-gray-100");
+                    navcontent.classList.add("bg-white");
+                } else {
+                    header.classList.remove("bg-white");
+                    navaction.classList.remove("gradient");
+                    navaction.classList.add("bg-white");
+                    navaction.classList.remove("text-gray-300");
+                    navaction.classList.add("text-gray-800");
+                    //Use to switch toggleColour colours
+                    for (var i = 0; i < toToggle.length; i++) {
+                        toToggle[i].classList.add("text-gray-800");
+                        toToggle[i].classList.remove("text-gray-800");
+                    }
+                    for (var i = 0; i < navcontent.children.length; i++) {
+                        navcontent.children[i].classList.add("text-gray-300");
+                        navcontent.children[i].classList.remove("text-black");
+                    }
+
+                    header.classList.remove("shadow");
+                    navcontent.classList.remove("bg-white");
+                    navcontent.classList.add("bg-gray-100");
+                }
+            });
+        </script>
+        <script>
+
+            var navMenuDiv = document.getElementById("nav-content");
+            var navMenu = document.getElementById("nav-toggle");
+
+            document.onclick = check;
+            function check(e) {
+                var target = (e && e.target) || (event && event.srcElement);
+
+                if (!checkParent(target, navMenuDiv)) {
+                    if (checkParent(target, navMenu)) {
+                        if (navMenuDiv.classList.contains("hidden")) {
+                            navMenuDiv.classList.remove("hidden");
+                        } else {
+                            navMenuDiv.classList.add("hidden");
+                        }
+                    } else {
+                        navMenuDiv.classList.add("hidden");
+                    }
+                }
+            }
+            function checkParent(t, elm) {
+                while (t.parentNode) {
+                    if (t == elm) {
+                        return true;
+                    }
+                    t = t.parentNode;
+                }
+                return false;
+            }
+        </script>
     </body>
 
 </html>
