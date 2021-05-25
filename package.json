@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-css": "tailwindcss build public/assets/css/styles.css -o public/assets/tailwind.css"
+    "build-css": "tailwindcss build public/assets/css/styles.css -o public/assets/css/tailwind.css"
   },
   "keywords": [],
   "author": "",

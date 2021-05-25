@@ -4,11 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-	font-family: "CoreCircus2DDot1";
-	src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.eot");
-	src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.eot?#iefix") format("embedded-opentype"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.woff2") format("woff2"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.woff") format("woff"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.ttf") format("truetype");
+body {
+	background-color: black;
 }
+
 @font-face {
 	font-family: "CoreCircus";
 	src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot");
@@ -24,6 +23,17 @@
 	.pb-safe {
 		padding-bottom: env(safe-area-inset-bottom);
 	}
+}
+
+#home {
+	background: url("../images/landing/Asset\ 1.svg") no-repeat top left, url("../images/landing/Asset\ 2.svg") no-repeat bottom left, url("../images/landing/Asset\ 5.svg") no-repeat top right, url("../images/landing/Asset\ 4.svg") bottom right no-repeat;
+	background-size: 10rem, 10rem, 10rem, 10rem;
+}
+
+.panel {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
 }
 
 .landing-text {
