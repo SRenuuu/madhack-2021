@@ -26,8 +26,8 @@ body {
 }
 
 #home {
-	background: url("../images/landing/Asset\ 1.svg") no-repeat top left, url("../images/landing/Asset\ 2.svg") no-repeat bottom left, url("../images/landing/Asset\ 5.svg") no-repeat top right, url("../images/landing/Asset\ 4.svg") bottom right no-repeat;
-	background-size: 10rem, 10rem, 10rem, 10rem;
+	background: url("../images/landing/Asset\ 1.svg") no-repeat center center, url("../images/landing/Asset\ 2.svg") no-repeat bottom left, url("../images/landing/Asset\ 5.svg") no-repeat center right, url("../images/landing/Asset\ 4.svg") bottom right no-repeat, url("../images/landing/Asset_6.svg") center left no-repeat;
+	background-size: 10vw, 10vw, 10vw, 10vw, 10vw;
 }
 
 .panel {
