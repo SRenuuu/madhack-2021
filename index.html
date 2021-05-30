@@ -1,489 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="description" content="Mobile Development Hackathon organized by UCSC IEEE" />
-        <meta name="keywords" content="Mobile Development, Hackathon" />
-        <meta name="author" content="UCSC IEEE" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="Mobile Development Hackathon organized by UCSC IEEE" name="description"/>
+    <meta content="Mobile Development, Hackathon" name="keywords"/>
+    <meta content="UCSC IEEE" name="author"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
 
-        <title>MadHack</title>
-        <link rel="stylesheet" href="assets/css/styles.css" />
-        <link rel="icon" type="image/png" sizes="128x128" href="assets/images/landing/favicon.ico">
-        <link rel="stylesheet" href="assets/css/tailwind.css" />
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
-        <script src="https://kit.fontawesome.com/1c113cefd7.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="assets/js/countdown.js"></script>
-        <script src="assets/js/smooth-scroll.js"></script>
-        <style>
-            .gradient {
-                background: black;
-            }
-        </style>
-    </head>
+    <title>MadHack</title>
+    <link href="assets/css/styles.css" rel="stylesheet"/>
+    <link href="assets/images/landing/favicon.ico" rel="icon" sizes="128x128" type="image/png">
+    <link href="assets/css/tailwind.css" rel="stylesheet"/>
+    <script defer src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/1c113cefd7.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <style>
+        .gradient {
+            background: black;
+        }
+    </style>
+</head>
 
-    <body class="leading-normal tracking-normal text-white gradient font-default">
-        <!--Nav-->
-        <nav id="header" class="fixed w-full z-30 top-0 text-white">
-            <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-6">
-                <div class="pl-4 flex items-center">
-                    <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-                        href="#home"> <img src="assets/images/landing/sadhack_logo.png" class="w-32 h-10" />
-                    </a>
-                </div>
-                <div class="block lg:hidden pr-4">
-                    <button id="nav-toggle"
-                        class="flex items-center p-1 text-white focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                        <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <title>Menu</title>
-                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-blue-500 lg:bg-transparent p-4 lg:p-0 z-20 text-gray-300 text-base uppercase font-bold tracking-widest"
-                    id="nav-content">
-                    <ul class="list-reset text-gray-300 lg:flex justify-end flex-1 items-center">
-                        <li class="mr-3">
-                            <a class="inline-block no-underline hover:text-gray-500 py-2 px-4"
-                                href="#timeline">Timeline</a>
-                        </li>
-                        <li class="mr-3">
-                            <a class="inline-block no-underline hover:text-gray-500 py-2 px-4" href="#prizes">Prizes</a>
-                        </li>
-                        <li class="mr-3">
-                            <a class="inline-block no-underline hover:text-gray-500 py-2 px-4"
-                                href="#frequently-asked">FAQs</a>
-                        </li>
-                    </ul>
-                    <button id="navAction"
-                        class="uppercase mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 transform transition hover:scale-105 duration-300 ease-in-out">Register</button>
-                </div>
-            </div>
-        </nav>
-        <!--Hero-->
-        <div class="container mx-auto flex flex-wrap flex-col md:flex-row items-center" id="home">
-            <div class="flex flex-col w-full justify-center text-center">
-                <div class="py-32">
-                    <h1 class="font-landing landing-text" data-heading="mad">Madhack</h1>
-                    <p
-                        class="text-white text-center font-bold px-5 sm:px-0 md:px-0 lg:px=0 text-xs sm:text-xs md:text-xl lg:text-xl uppercase tracking-wider break-words sm: break-normal md:break-normal lg:break-normal">
-                        Battle
-                        out your
-                        mobile
-                        application
-                        development
-                        skills in the ultimate hackathon</p>
-                    <div class="flex justify-center mt-20 md:mt-32" x-data="countdown()" x-init="start()">
-                        <div class="text-blue-100">
-                            <h1
-                                class="md:text-3xl sm:text-xl text-center mb-3 font-extralight uppercase tracking-widest justify-center">
-                                <span>
-                                    <div class="flex items-center justify-center pt-5 sm:pt-0 pl-2">
-                                        Registration opening in
-                                        <img src="assets/images/landing/rocket.svg" class="w-10 h-10 animate-bounce" />
-                                    </div>
-                                </span>
-                            </h1>
-                            <div class="md:text-6xl text-center flex lg:w-full md:w-full items-center justify-center">
-                                <div class="md:w-32 mx- p-2 bg-white text-blue-500 rounded-lg sm:w-10">
-                                    <div class="font-mono leading-none" x-text="days">00</div>
-                                    <div class="font-mono uppercase text-sm leading-none">Days</div>
-                                </div>
-                                <div class="md:w-32 mx-1 p-2 bg-white text-blue-500 rounded-lg sm:w-10">
-                                    <div class="font-mono leading-none" x-text="hours">00</div>
-                                    <div class="font-mono uppercase text-sm leading-none">Hours</div>
-                                </div>
-                                <div class="md:w-32 mx-1 p-2 bg-white text-blue-500 rounded-lg sm:w-10">
-                                    <div class="font-mono leading-none" x-text="minutes">00</div>
-                                    <div class="font-mono uppercase text-sm leading-none">Minutes</div>
-                                </div>
-                                <!-- <div class="md:text-2xl mx-1 font-extralight">and</div> -->
-                                <div class="md:w-32 mx-1 p-2 bg-white text-blue-500 rounded-lg sm:w-min">
-                                    <div class="font-mono leading-none" x-text="seconds">00</div>
-                                    <div class="font-mono uppercase text-sm leading-none">Seconds</div>
-                                </div>
-                            </div>
+<body class="leading-normal tracking-normal text-white gradient font-default">
+
+<!--Nav-->
+<nav class="fixed w-full z-30 top-0 text-white" id="header">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-6">
+        <div class="pl-4 flex items-center">
+            <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+               href="#home"> <img alt="Madhack Logo" class="w-32 h-10" src="assets/images/landing/madhack-logo.webp"/>
+            </a>
+        </div>
+        <div class="block lg:hidden pr-4">Á
+            <button class="flex items-center p-1 text-white focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+                    id="nav-toggle">
+                <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-blue-500 lg:bg-transparent p-4 lg:p-0 z-20 text-gray-300 text-base uppercase font-bold tracking-widest"
+             id="nav-content">
+            <ul class="list-reset text-gray-300 lg:flex justify-end flex-1 items-center">
+                <li class="mr-3">
+                    <a class="inline-block no-underline hover:text-gray-500 py-2 px-4"
+                       href="#timeline">Timeline</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block no-underline hover:text-gray-500 py-2 px-4" href="#prizes">Prizes</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block no-underline hover:text-gray-500 py-2 px-4"
+                       href="#frequently-asked">FAQs</a>
+                </li>
+            </ul>
+            <button class="uppercase mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 transform transition hover:scale-105 duration-300 ease-in-out"
+                    id="navAction">
+                Register
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!--Hero-->
+<div class="container mx-auto flex flex-wrap flex-col md:flex-row items-center" id="home">
+    <div class="flex flex-col w-full justify-center text-center">
+        <div class="py-32">
+            <h1 class="font-landing landing-text" data-heading="mad">Madhack</h1>
+            <p
+                    class="text-white text-center font-bold px-5 sm:px-0 md:px-0 lg:px=0 text-xs sm:text-xs md:text-xl lg:text-xl uppercase tracking-wider break-words sm: break-normal md:break-normal lg:break-normal">
+                Battle
+                out your
+                mobile
+                application
+                development
+                skills in the ultimate hackathon
+            </p>
+            <div class="flex justify-center mt-20 md:mt-32" x-data="countdown()" x-init="start()">
+                <div class="text-blue-100">
+                    <h1
+                            class="md:text-3xl sm:text-xl text-center mb-3 font-extralight uppercase tracking-widest justify-center">
+                                        <span>
+                                            <span class="flex items-center justify-center pt-5 sm:pt-0 pl-2">
+                                                Registration opening in&nbsp;
+                                                <img alt="Rocket icon" class="w-10 h-10 animate-bounce"
+                                                     src="assets/images/landing/rocket.svg"/>
+                                            </span>
+                                        </span>
+                    </h1>
+                    <div class="md:text-6xl text-center flex lg:w-full md:w-full items-center justify-center">
+                        <div class="md:w-32 mx- p-2 bg-white text-blue-500 rounded-lg sm:w-10">
+                            <div class="font-mono leading-none" x-text="days">00</div>
+                            <div class="font-mono uppercase text-sm leading-none">Days</div>
+                        </div>
+                        <div class="md:w-32 mx-1 p-2 bg-white text-blue-500 rounded-lg sm:w-10">
+                            <div class="font-mono leading-none" x-text="hours">00</div>
+                            <div class="font-mono uppercase text-sm leading-none">Hours</div>
+                        </div>
+                        <div class="md:w-32 mx-1 p-2 bg-white text-blue-500 rounded-lg sm:w-10">
+                            <div class="font-mono leading-none" x-text="minutes">00</div>
+                            <div class="font-mono uppercase text-sm leading-none">Minutes</div>
+                        </div>
+                        <!-- <div class="md:text-2xl mx-1 font-extralight">and</div> -->
+                        <div class="md:w-32 mx-1 p-2 bg-white text-blue-500 rounded-lg sm:w-min">
+                            <div class="font-mono leading-none" x-text="seconds">00</div>
+                            <div class="font-mono uppercase text-sm leading-none">Seconds</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <section class="bg-white border-b py-8">
-            <div class="container mx-auto flex flex-wrap pt-4 pb-12">
-                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 uppercase">
-                    What is Madhack?
-                </h1>
-                <div class="w-full mb-4">
-                    <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+    </div>
+</div>
+<section class="bg-white border-b py-8">
+    <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 uppercase">
+            What is Madhack?
+        </h1>
+        <div class="w-full mb-4">
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="container text-white px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+            <!--Left Col-->
+            <div class="flex flex-col w-full md:w-2/3 justify-center items-start text-center md:text-left">
+                <div
+                        class="flex-1 text-white rounded-lg bg-blue-500 overflow-hidden shadow-2xl px-10 py-8 font-extralight">
+                    <p class="leading-normal text-2xl mb-8">
+                        Introducing Sri Lanka’s first Mobile Application Development Hackathon, the IEEE
+                        Student Branch of UCSC proudly presents 'MadHack 2021', a 24-hour
+                        inter-university
+                        hackathon.
+                        MadHack aims to let the participants put their creativity and
+                        innovation to the test by giving them the opportunity to develop in any platform
+                        of choice.
+                    </p>
                 </div>
-                <div class="container text-white px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-                    <!--Left Col-->
-                    <div class="flex flex-col w-full md:w-2/3 justify-center items-start text-center md:text-left">
-                        <div
-                            class="flex-1 text-white rounded-lg bg-blue-500 overflow-hidden shadow-2xl px-10 py-8 font-extralight">
-                            <p class="leading-normal text-2xl mb-8">
-                                Introducing Sri Lanka’s first Mobile Application Development Hackathon, the IEEE
-                                Student Branch of UCSC proudly presents 'MadHack 2021', a 24-hour
-                                inter-university
-                                hackathon.
-                                MadHack aims to let the participants put their creativity and
-                                innovation to the test by giving them the opportunity to develop in any platform
-                                of choice.
-                            </p>
-                        </div>
+            </div>
+            <!--Right Col-->
+            <div class="w-full md:w-1/3 py-6 text-center">
+                <img alt="What is Madhack?" class="w-full md:w-4/5 z-50"
+                     src="assets/images/landing/what-is-madhack.webp"/>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-white border-b py-8" id="timeline">
+    <div class="container max-w-5xl mx-auto m-8">
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 uppercase">
+            Timeline
+        </h1>
+        <div class="w-full mb-4">
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="container">
+            <div class="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50">
+                <!-- left -->
+                <div class="flex flex-row-reverse md:contents">
+                    <div class="bg-blue-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
+                        <h3 class="font-semibold text-lg mb-1 uppercase">May 30th - Launch Event 🎉 </h3>
+                        <p class="leading-normal text-justify mt-2">
+                            We will be officially kicking off and opening registrations. Join our events and
+                            stay connected with our social media to know the latest updates. See you soon😉
+                        </p>
                     </div>
-                    <!--Right Col-->
-                    <div class="w-full md:w-1/3 py-6 text-center">
-                        <img class="w-full md:w-4/5 z-50" src="assets/images/landing/what-is-madhack.svg" />
+                    <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                        <div class="h-full w-6 flex items-center justify-center">
+                            <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
+                        </div>
+                        <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
                     </div>
                 </div>
-        </section>
-        <section class="bg-white border-b py-8" id="timeline">
-            <div class="container max-w-5xl mx-auto m-8">
-                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 uppercase">
-                    Timeline
-                </h1>
-                <div class="w-full mb-4">
-                    <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                <!-- right -->
+                <div class="flex md:contents">
+                    <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+                        <div class="h-full w-6 flex items-center justify-center">
+                            <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
+                        </div>
+                        <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
+                    </div>
+                    <div class="bg-blue-500 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
+                        <h3 class="font-semibold text-lg mb-1 uppercase">June 13th - Workshop I 📚</h3>
+                        <p class="leading-normal text-justify mt-2">
+                            Conducted by one of our knowledge partners to give you an intro to mobile
+                            application development and give you a head start. Those who wish to enter must
+                            register
+                            beforehand. Don't brain lag :P
+                        </p>
+                    </div>
                 </div>
-                <div class="container">
-                    <div class="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50">
-                        <!-- left -->
-                        <div class="flex flex-row-reverse md:contents">
-                            <div class="bg-blue-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
-                                <h3 class="font-semibold text-lg mb-1 uppercase">May 30th - Launch Event 🎉 </h3>
-                                <p class="leading-normal text-justify mt-2">
-                                    We will be officially kicking off and opening registrations. Join our events and
-                                    stay connected with our social media to know the latest updates. See you soon😉
-                                </p>
-                            </div>
-                            <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
-                                <div class="h-full w-6 flex items-center justify-center">
-                                    <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
-                                </div>
-                                <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
-                            </div>
+                <!-- left -->
+                <div class="flex flex-row-reverse md:contents">
+                    <div class="bg-blue-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
+                        <h3 class="font-semibold text-lg mb-1 uppercase">June 27th - Workshop II 📚</h3>
+                        <p class="leading-normal text-justify mt-2">
+                            Conducted by one of our knowledge partners to give you an intro to mobile
+                            application development and give you a head start. Those who wish to enter must
+                            register
+                            beforehand. Don't brain lag :P
+                        </p>
+                    </div>
+                    <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                        <div class="h-full w-6 flex items-center justify-center">
+                            <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
                         </div>
-                        <!-- right -->
-                        <div class="flex md:contents">
-                            <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
-                                <div class="h-full w-6 flex items-center justify-center">
-                                    <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
-                                </div>
-                                <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
-                            </div>
-                            <div class="bg-blue-500 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
-                                <h3 class="font-semibold text-lg mb-1 uppercase">June 13th - Workshop I 📚</h3>
-                                <p class="leading-normal text-justify mt-2">
-                                    Conducted by one of our knowledge partners to give you an intro to mobile
-                                    application development and give you a head start. Those who wish to enter must
-                                    register
-                                    beforehand. Don't brain lag :P
-                                </p>
-                            </div>
+                        <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
+                    </div>
+                </div>
+                <div class="flex md:contents">
+                    <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+                        <div class="h-full w-6 flex items-center justify-center">
+                            <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
                         </div>
-                        <!-- left -->
-                        <div class="flex flex-row-reverse md:contents">
-                            <div class="bg-blue-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
-                                <h3 class="font-semibold text-lg mb-1 uppercase">June 27th - Workshop II 📚</h3>
-                                <p class="leading-normal text-justify mt-2">
-                                    Conducted by one of our knowledge partners to give you an intro to mobile
-                                    application development and give you a head start. Those who wish to enter must
-                                    register
-                                    beforehand. Don't brain lag :P
-                                </p>
-                            </div>
-                            <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
-                                <div class="h-full w-6 flex items-center justify-center">
-                                    <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
-                                </div>
-                                <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
-                            </div>
+                        <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
+                    </div>
+                    <div class="bg-blue-500 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
+                        <h3 class="font-semibold text-lg mb-1 uppercase">June 27th - Ideathon Stage 💡</h3>
+                        <p class="leading-normal text-justify">
+                            The submissions for proposals will be open and the proposal can be under any topic.
+                            There will be no restrictions but if it is found that the project has been submitted
+                            for any other compettion, your team will be disqualified.
+                        </p>
+                    </div>
+                </div>
+                <!-- left -->
+                <div class="flex flex-row-reverse md:contents">
+                    <div class="bg-blue-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
+                        <h3 class="font-semibold text-lg mb-1 uppercase">July 23rd - Development Stage💻</h3>
+                        <p class="leading-normal text-justify mt-2">
+                            The top 10 teams will be selected from the proposal submissions and given one week
+                            to implement the proposed application.
+                    </div>
+                    <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                        <div class="h-full w-6 flex items-center justify-center">
+                            <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
                         </div>
-                        <div class="flex md:contents">
-                            <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
-                                <div class="h-full w-6 flex items-center justify-center">
-                                    <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
-                                </div>
-                                <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
-                            </div>
-                            <div class="bg-blue-500 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
-                                <h3 class="font-semibold text-lg mb-1 uppercase">June 27th - Ideathon Stage 💡</h3>
-                                <p class="leading-normal text-justify">
-                                    The submissions for proposals will be open and the proposal can be under any topic.
-                                    There will be no restrictions but if it is found that the project has been submitted
-                                    for any other compettion, your team will be disqualified.
-                                </p>
-                            </div>
+                        <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class="flex md:contents">
+                    <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+                        <div class="h-full w-6 flex items-center justify-center">
+                            <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
                         </div>
-                        <!-- left -->
-                        <div class="flex flex-row-reverse md:contents">
-                            <div class="bg-blue-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
-                                <h3 class="font-semibold text-lg mb-1 uppercase">July 23rd - Development Stage💻</h3>
-                                <p class="leading-normal text-justify mt-2">
-                                    The top 10 teams will be selected from the proposal submissions and given one week
-                                    to implement the proposed application.
-                            </div>
-                            <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
-                                <div class="h-full w-6 flex items-center justify-center">
-                                    <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
-                                </div>
-                                <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
-                            </div>
+                        <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
+                    </div>
+                    <div class="bg-blue-500 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
+                        <h3 class="font-semibold text-lg mb-1 uppercase">July 11th - Workshop II 📚</h3>
+                        <p class="leading-normal text-justify">
+                            Conducted by one of our knowledge partners to give you an intro to mobile
+                            applicattion development to give you a head start. Those who wish to enter must
+                            register
+                            beforehand. Don't brain lag :P
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-row-reverse md:contents">
+                    <div class="bg-blue-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
+                        <h3 class="font-semibold text-lg mb-1 uppercase">July 31st to Aug 1st - FINALS🤠</h3>
+                        <p class="leading-normal text-justify">
+                            This will be the judging stage and your team will be required to do a 15 minute
+                            presentation followed by a 5 minute Q&A session.
+                        </p>
+                    </div>
+                    <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                        <div class="h-full w-6 flex items-center justify-center">
+                            <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
                         </div>
-                        <!-- right -->
-                        <div class="flex md:contents">
-                            <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
-                                <div class="h-full w-6 flex items-center justify-center">
-                                    <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
-                                </div>
-                                <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
-                            </div>
-                            <div class="bg-blue-500 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
-                                <h3 class="font-semibold text-lg mb-1 uppercase">July 11th - Workshop II 📚</h3>
-                                <p class="leading-normal text-justify">
-                                    Conducted by one of our knowledge partners to give you an intro to mobile
-                                    applicattion development to give you a head start. Those who wish to enter must
-                                    register
-                                    beforehand. Don't brain lag :P
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-row-reverse md:contents">
-                            <div class="bg-blue-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
-                                <h3 class="font-semibold text-lg mb-1 uppercase">July 31st to Aug 1st - FINALS🤠</h3>
-                                <p class="leading-normal text-justify">
-                                    This will be the judging stage and your team will be required to do a 15 minute
-                                    presentation followed by a 5 minute Q&A session.
-                                </p>
-                            </div>
-                            <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
-                                <div class="h-full w-6 flex items-center justify-center">
-                                    <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
-                                </div>
-                                <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
-                            </div>
-                        </div>
+                        <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow"></div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="bg-gray-100 py-8" id="prizes">
-            <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
-                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 uppercase">Prizes</h1>
-                <div class="w-full mb-4">
-                    <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-                </div>
-                <div class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
-                    <div
-                        class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
-                        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-                            <div class="p-8 text-3xl font-bold text-center border-b-4">Third Place</div>
-                            <ul class="w-full">
-                                <img src="assets/images/prizes/bronze.jpg" />
-                            </ul>
-                            <div
-                                class="flex-none bg-white rounded-b rounded-t-none overflow-hidden px-6 py-10 font-bold text-center text-lg">
-                                A cash prize of
-                                <div class="w-full text-5xl font-bold text-center">
-                                    Rs. 50,000
-                                </div> + swag + certificates + stickers
-                            </div>
-                        </div>
+        </div>
+    </div>
+</section>
 
-                    </div>
-                    <div
-                        class="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
-                        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-                            <div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
-                            <div class="p-8 text-3xl font-bold text-center border-b-4">First Place</div>
-                            <ul class="w-full">
-                                <img src="assets/images/prizes/gold.jpg" />
-                            </ul>
-                            <div
-                                class="flex-none bg-white rounded-b rounded-t-none overflow-hidden px-6 pb-10 font-bold text-center text-lg">
-                                A cash prize of
-                                <div class="w-full text-6xl font-bold text-center">
-                                    Rs. 50,000
-                                </div> + swag + certificates + stickers
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
-                        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-                            <div class="p-8 text-3xl font-bold text-center border-b-4">Second Place</div>
-                            <ul class="w-full p-10">
-                                <img src="assets/images/prizes/silver.jpg" />
-                                <div
-                                    class="flex-none bg-white rounded-b rounded-t-none overflow-hidden px-6 pb-10 font-bold text-center text-lg mt-5">
-                                    A cash prize of
-                                    <div class="w-full text-5xl font-bold text-center">
-                                        Rs. 50,000
-                                    </div> + swag + certificates + stickers
-                                </div>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-white faqs" id="frequently-asked">
+<section class="bg-gray-100 py-8" id="prizes">
+    <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 uppercase">Prizes</h1>
+        <div class="w-full mb-4">
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
             <div
-                class="container mx-auto px-2 pt-4 pb-12 text-gray-800 lg:mb-16 xl:mb-24 py-12 lg:pt-20 relative overflow-hidden">
-                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 uppercase">Freqeuntly
-                    Asked Questions</h1>
-                <div class="w-full mb-4">
-                    <div class="h-1 mx-auto gradient w-96 opacity-25 my-0 py-0 rounded-t"></div>
-                </div>
-                <div class="max-w-screen-xl mx-auto px-6 lg:px-8 xl:px-4 relative z-20 mt-10">
-                    <div class="mb-12 lg:mb-20">
-                        <ul class="divide-y divide-gray-300text-base md:text-lg">
-                            <li>
-                                <button
-                                    class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
-                                    <span class="flex-1 text-left pr-6">
-                                        What is the registration process?
-                                    </span>
-                                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </button>
-                                <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
-                                    We will be posting the announcements on our social media and the registration links
-                                    will
-                                    be available on our site. You will be required to register for the workshop and
-                                    compettion seperately.
-                                </div>
-                            </li>
-                            <li>
-                                <button
-                                    class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
-                                    <span class="flex-1 text-left pr-6">
-                                        What are the phases of the compettion?
-                                    </span>
-                                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </button>
-                                <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
-                                    The competition will have three phases; the proposal submission phase, the
-                                    implementation phase and the judging phase. The proposal submission stage will be
-                                    open to all participants. The implementation stage will be for the top 10
-                                    teams selected from the proposal submissions.
-                                </div>
-                            </li>
-                            <li>
-                                <button
-                                    class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
-                                    <span class="flex-1 text-left pr-6">
-                                        Do teams need to know how to build a mobile app to enter the contest?
-                                    </span>
-                                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </button>
-                                <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
-                                    If your team gets selected to the final stage, you will be asked to implement the
-                                    application proposed, but if you'e currently not comfortable with mobile development
-                                    our workshops would help you to some extent.
-                                </div>
-                            </li>
-                            <li>
-                                <button
-                                    class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
-                                    <span class="flex-1 text-left pr-6">
-                                        Are there any restrictions on the programming languages?
-                                    </span>
-                                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </button>
-                                <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
-                                    No, you are free to use whatever framework or programming language as you wish. Go
-                                    crazy and may the best app win!
-                                </div>
-                            </li>
-                            <li>
-                                <button
-                                    class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
-                                    <span class="flex-1 text-left pr-6">
-                                        How will the final app be chosen?
-                                    </span>
-                                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </button>
-                                <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
-                                    We will be choosing the best 10 teams for the final round based on the proposals
-                                    submitted in the inital phase. The final 10 will be asked to implement the
-                                    application and the best among them will be chosen based on various criteria.
-                                </div>
-                            </li>
-                            <li>
-                                <button
-                                    class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
-                                    <span class="flex-1 text-left pr-6">
-                                        How important will the design of the mobile app be?
-                                    </span>
-                                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </button>
-                                <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
-                                    A visually pleasing application will definitely be in your favour but the importance
-                                    of it will be decided by the judges.
-                                </div>
-                            </li>
-                        </ul>
+                    class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+                <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+                    <div class="p-8 text-3xl font-bold text-center border-b-4">Third Place</div>
+                    <div class="w-full pt-10">
+                        <img alt="Bronze prize" src="assets/images/prizes/bronze.webp"/>
+                    </div>
+                    <div
+                            class="flex-none bg-white rounded-b rounded-t-none overflow-hidden px-6 py-10 font-bold text-center text-lg">
+                        A cash prize of
+                        <div class="w-full text-5xl font-bold text-center">
+                            Rs. 20,000
+                        </div>
+                        + swag + certificates + stickers
                     </div>
                 </div>
-        </section>
-        <footer class="py-6 sm:py-6 md:py-6 lg:py-6">
-            <div class="container mx-auto px-4">
-                <div class="px-4 mt-4 sm:w-1/3 xl:w-1/6 sm:mx-auto xl:mt-0 xl:ml-auto">
-                    <h5
-                        class="text-xl sm:text-2xl md:text-2xl lg:text-2xl font-bold mb-6 text-center sm:text-center xl:text-center">
-                        Stay connected</h5>
-                    <div class="flex justify-center">
-                        <a href="https://www.facebook.com/IEEE.UCSC" target="_blank"
-                            class="w-14 h-14 border-2 text-2xl border-gray-400 rounded-full text-center py-2.5 text-gray-300 hover:text-white hover:bg-blue-600 hover:border-blue-600">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/ieee-student-branch-ucsc" target="_blank"
-                            class="w-14 h-14 text-2xl border-2 border-gray-400 rounded-full text-center py-2.5 ml-2 text-gray-300 hover:text-white hover:bg-blue-400 hover:border-blue-400">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://www.instagram.com/ucsc.ieee" target="_blank"
-                            class="w-14 h-14 text-2xl border-2 border-gray-400 rounded-full text-center py-2.5 ml-2 text-gray-300 hover:text-white hover:bg-pink-500 hover:border-pink-500">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+
+            </div>
+            <div
+                    class="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden pb-5">
+                    <div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
+                    <div class="p-8 text-3xl font-bold text-center border-b-4">First Place</div>
+                    <div class="w-full pb-2">
+                        <img alt="Gold prize" src="assets/images/prizes/gold.webp"/>
+                    </div>
+                    <div
+                            class="flex-none bg-white rounded-b rounded-t-none overflow-hidden px-6 pb-10 font-bold text-center text-lg">
+                        A cash prize of
+                        <div class="w-full text-6xl font-bold text-center">
+                            Rs. 50,000
+                        </div>
+                        + swag + certificates + stickers
                     </div>
                 </div>
             </div>
+            <div
+                    class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+                <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+                    <div class="p-8 text-3xl font-bold text-center border-b-4">Second Place</div>
+                    <div class="w-full p-10 pb-15">
+                        <img alt="Silver prize" src="assets/images/prizes/silver.webp"/>
+                    </div>
+                    <div
+                            class="flex-none bg-white rounded-b rounded-t-none overflow-hidden px-6 pb-10 font-bold text-center text-lg mt-5">
+                        A cash prize of
+                        <div class="w-full text-5xl font-bold text-center">
+                            Rs. 30,000
+                        </div>
+                        + swag + certificates + stickers
+                    </div>
+                </div>
             </div>
-        </footer>
-    </body>
-    <script src="./assets/js/mobile-menu.js"></script>
-    <script src="assets/js/dynamic_scroll.js"></script>
-    <script src="assets/js/faq.js"></script>
+        </div>
+    </div>
+</section>
+<section class="bg-white faqs" id="frequently-asked">
+    <div
+            class="container mx-auto px-2 pt-4 pb-12 text-gray-800 lg:mb-16 xl:mb-24 py-12 lg:pt-20 relative overflow-hidden">
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 uppercase">Freqeuntly
+            Asked Questions
+        </h1>
+        <div class="w-full mb-4">
+            <div class="h-1 mx-auto gradient w-96 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-8 xl:px-4 relative z-20 mt-10">
+            <div class="mb-12 lg:mb-20">
+                <ul class="divide-y divide-gray-300text-base md:text-lg">
+                    <li>
+                        <button
+                                class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
+                                            <span class="flex-1 text-left pr-6">
+                                                What is the registration process?
+                                            </span>
+                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                                      stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"></path>
+                            </svg>
+                        </button>
+                        <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
+                            We will be posting the announcements on our social media and the registration links
+                            will
+                            be available on our site. You will be required to register for the workshop and
+                            compettion seperately.
+                        </div>
+                    </li>
+                    <li>
+                        <button
+                                class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
+                                            <span class="flex-1 text-left pr-6">
+                                                What are the phases of the compettion?
+                                            </span>
+                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                                      stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"></path>
+                            </svg>
+                        </button>
+                        <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
+                            The competition will have three phases; the proposal submission phase, the
+                            implementation phase and the judging phase. The proposal submission stage will be
+                            open to all participants. The implementation stage will be for the top 10
+                            teams selected from the proposal submissions.
+                        </div>
+                    </li>
+                    <li>
+                        <button
+                                class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
+                                            <span class="flex-1 text-left pr-6">
+                                                Do teams need to know how to build a mobile app to enter the contest?
+                                            </span>
+                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                                      stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"></path>
+                            </svg>
+                        </button>
+                        <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
+                            If your team gets selected to the final stage, you will be asked to implement the
+                            application proposed, but if you'e currently not comfortable with mobile development
+                            our workshops would help you to some extent.
+                        </div>
+                    </li>
+                    <li>
+                        <button
+                                class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
+                                            <span class="flex-1 text-left pr-6">
+                                                Are there any restrictions on the programming languages?
+                                            </span>
+                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                                      stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"></path>
+                            </svg>
+                        </button>
+                        <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
+                            No, you are free to use whatever framework or programming language as you wish. Go
+                            crazy and may the best app win!
+                        </div>
+                    </li>
+                    <li>
+                        <button
+                                class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
+                                            <span class="flex-1 text-left pr-6">
+                                                How will the final app be chosen?
+                                            </span>
+                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                                      stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"></path>
+                            </svg>
+                        </button>
+                        <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
+                            We will be choosing the best 10 teams for the final round based on the proposals
+                            submitted in the inital phase. The final 10 will be asked to implement the
+                            application and the best among them will be chosen based on various criteria.
+                        </div>
+                    </li>
+                    <li>
+                        <button
+                                class="py-3 lg:py-4 font-bold focus:outline-none hover:text-blue-600 w-full flex items-center justify-between faq-button">
+                                            <span class="flex-1 text-left pr-6">
+                                                How important will the design of the mobile app be?
+                                            </span>
+                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                                      stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"></path>
+                            </svg>
+                        </button>
+                        <div class="panel y-3 lg:py-4 bg-blue-500 text-white px-5 py-2 rounded mx-5 mb-2">
+                            A visually pleasing application will definitely be in your favour but the importance
+                            of it will be decided by the judges.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-6 sm:py-6 md:py-6 lg:py-6">
+    <div class="container mx-auto px-4">
+        <div class="px-4 mt-4 sm:w-1/3 xl:w-1/6 sm:mx-auto xl:mt-0 xl:ml-auto">
+            <h5
+                    class="text-xl sm:text-2xl md:text-2xl lg:text-2xl font-bold mb-6 text-center sm:text-center xl:text-center">
+                Stay connected
+            </h5>
+            <div class="flex justify-center">
+                <a class="w-14 h-14 border-2 text-2xl border-gray-400 rounded-full text-center py-2.5 text-gray-300 hover:text-white hover:bg-blue-600 hover:border-blue-600"
+                   href="https://www.facebook.com/IEEE.UCSC"
+                   target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a class="w-14 h-14 text-2xl border-2 border-gray-400 rounded-full text-center py-2.5 ml-2 text-gray-300 hover:text-white hover:bg-blue-400 hover:border-blue-400"
+                   href="https://www.linkedin.com/company/ieee-student-branch-ucsc"
+                   target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a class="w-14 h-14 text-2xl border-2 border-gray-400 rounded-full text-center py-2.5 ml-2 text-gray-300 hover:text-white hover:bg-pink-500 hover:border-pink-500"
+                   href="https://www.instagram.com/ucsc.ieee"
+                   target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+<script src="./assets/js/mobile-menu.js"></script>
+<script src="assets/js/dynamic_scroll.js"></script>
+<script src="assets/js/faq.js"></script>
 
 </html>
